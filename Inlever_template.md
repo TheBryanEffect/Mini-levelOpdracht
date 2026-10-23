@@ -18,71 +18,124 @@ het doel van het spel is om alle muntjes te verzamelen. zonder dat je dood gaat!
 
 ## Screenshot / GIF van je level
 
-<!-- Voeg hieronder een screenshot of een GIF toe van je werkende level.
-     Sleep het bestand naar deze map en gebruik dan de syntax hieronder. -->
-
-![Mini-level preview](images/level.gif)
-
-<!-- Tip: gebruik ShareX, LICEcap of de ingebouwde Xbox Game Bar (Win+G) om een GIF op te nemen. -->
-
----
+![Mini-level preview](images/Level.gif)
 
 ## Bewegend object
 
-<!-- Welk object beweegt en hoe heb je dat gedaan? -->
+De cube beweegt op de X en Y as. ik heb dit gedaan door 
+Vector3 direction = new Vector3 en float horizontal = Input.GetAxis("Horizontal"); te gebruiken.
+voor de jump moest er ook gechecked worden of de cube wel op de grond stond. zodat hij niet kan vliegen!
 
 ...
 
 ```csharp
 // Plak hier het script of het stuk code dat het object laat bewegen.
+void Start()
+{
+    rb = GetComponent<Rigidbody>();
+    Health = 100;
+}
+
+// Update is called once per frame
+
 void Update()
 {
+    jump = Input.GetKeyDown(KeyCode.Space);
 
-}
+    float horizontal = Input.GetAxis("Horizontal");
+    Vector3 direction = new Vector3(horizontal, 0, 0);
+    rb.linearVelocity = new Vector3(
+        direction.x * speed,
+        rb.linearVelocity.y,
+        direction.z * speed
+        );
+
+    if (Input.GetKeyDown(KeyCode.Space) == true && Grounded == true)
+    {
+        Debug.Log("Jumped");
+        rb.linearVelocity = new Vector3(horizontal, JumpHeight, 0);
+        Grounded = false;
+    }
 ```
 
 ---
 
 ## Collider of trigger
 
-<!-- Welk object heeft een collider of trigger, en wat gebeurt er? -->
+De grond heeft een collider om te checken of je wel op de grond staat om nog een keer te kunnen springen.
+en de coin heeft een trigger hierdoor, kan je door de coin lopen de de coin oppakken!
 
 ...
 
 ```csharp
 // Plak hier de OnCollisionEnter/OnTriggerEnter code die je hebt gebruikt.
-private void OnTriggerEnter(Collider other)
-{
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            Coins += 1;
+            Debug.Log($"Aantal coins: [{Coins}]");
+        }
+    }
 }
+
 ```
 
 ---
 
 ## Logica met `if` of `switch`
 
-<!-- Beschrijf kort welke keuze je hebt gemaakt (bijv. sleutel → deur open). -->
+ik heb heel veel if gebruikt om bijvoorbeeld tevragen of de player wel op de grond staat voordat hij springt!
 
 ...
 
 ```csharp
 // Plak hier het stuk code met jouw if- of switch-logica.
-if ()
+void OnCollisionEnter(Collision collision)
 {
+    if (collision.gameObject.CompareTag("Ground"))
+    {
+        Debug.Log("OpDeGrond");
+        Grounded = true;
+    }
+    else
+    {
+        Grounded = false;
+    }
 
-}
 ```
 
 ---
 
 ## Eigen extra idee
 
-<!-- Wat is jouw eigen extra feature? Beschrijf wat het doet en hoe je het hebt gebouwd. -->
+1. ik heb de camera aan de player gezet waardoor de camera meegaat met de player.
+2. ik heb een pain block toegevoegd waar de player health aan verliest en uiteindelijk dood kan gaan.
 
 ...
 
 ```csharp
-// Optioneel: plak hier de bijbehorende code.
+if (collision.gameObject.CompareTag("Pain"))
+{
+    
+    onpainblock = true;
+    Grounded = true;
+    Debug.Log("onPainBlock");
+    Health -= 20;
+    Debug.Log($"Painblock -20 heath = {Health}");
+    if (Health <= 0)
+    {
+        Debug.Log("Dood!");
+        Destroy(gameObject);
+    }
+}
+else
+{
+    onpainblock = false;
+    
+}
 
 ```
 
@@ -90,15 +143,16 @@ if ()
 
 ## Evaluatie
 
-### Wat ging goed? en waarom?
+### Wat ging goed? en waar
 
-<!-- Wat lukte je makkelijk of waar ben je trots op? -->
+de collision en trigger had ik snel al door waardoor dat super snel ging!
+ik ben ook trots op dat ik bij de pain blocks de kleur heb laten veranderen!
 
 ...
 
 ### Wat vond je lastig? en waarom?
 
-<!-- Waar liep je tegenaan? Hoe heb je het opgelost (of niet)? -->
+ik vond het lastig om de juiste ...
 
 ...
 
