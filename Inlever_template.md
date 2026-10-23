@@ -1,15 +1,16 @@
 # Mini-level — Inleveren
 
-**Naam:** <!-- jouw naam -->  
-**Klas:** <!-- jouw klas -->
-**Datum:** <!-- datum van inleveren -->  
+**Naam:** Bryan Aberkrom 
+**Klas:** SD1C
+**Datum:** 23/10/2026 
 **Les:** GDV Les 6
 
 ---
 
 ## Wat heb ik gemaakt?
 
-<!-- Beschrijf kort je mini-level. Wat moet de speler doen? Wat is het doel? -->
+Ik heb een heel simpel level gemaakt met goede player bewegingen, pain blocks en coins om optepakken.
+het doel van het spel is om alle muntjes te verzamelen. zonder dat je dood gaat!
 
 ...
 
