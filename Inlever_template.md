@@ -12,8 +12,6 @@
 Ik heb een heel simpel level gemaakt met goede player bewegingen, pain blocks en coins om optepakken.
 het doel van het spel is om alle muntjes te verzamelen. zonder dat je dood gaat!
 
-...
-
 ---
 
 ## Screenshot / GIF van je level
@@ -148,18 +146,13 @@ else
 de collision en trigger had ik snel al door waardoor dat super snel ging!
 ik ben ook trots op dat ik bij de pain blocks de kleur heb laten veranderen!
 
-...
 
-### Wat vond je lastig? en waarom?
+### Wat vond je lastig?
 
 ik vond het lastig om de materialen optevragen en te veranderen van de player en van andere gameobjecten.
 
-
-
-...
 
 ### Wat zou je een volgende keer anders doen?
 
 ik zou meer "Case" statements gebruiken om "if" te vervangen en om het meer overzichtelijker te maken
 
-...
