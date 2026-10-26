@@ -143,7 +143,7 @@ else
 
 ## Evaluatie
 
-### Wat ging goed? en waar
+### Wat ging goed? en waarom?
 
 de collision en trigger had ik snel al door waardoor dat super snel ging!
 ik ben ook trots op dat ik bij de pain blocks de kleur heb laten veranderen!
@@ -152,12 +152,14 @@ ik ben ook trots op dat ik bij de pain blocks de kleur heb laten veranderen!
 
 ### Wat vond je lastig? en waarom?
 
-ik vond het lastig om de juiste ...
+ik vond het lastig om de materialen optevragen en te veranderen van de player en van andere gameobjecten.
+
+
 
 ...
 
 ### Wat zou je een volgende keer anders doen?
 
-<!-- Wat heb je geleerd? -->
+ik zou meer "Case" statements gebruiken om "if" te vervangen en om het meer overzichtelijker te maken
 
 ...
