@@ -111,6 +111,7 @@ void OnCollisionEnter(Collision collision)
 
 1. ik heb de camera aan de player gezet waardoor de camera meegaat met de player.
 2. ik heb een pain block toegevoegd waar de player health aan verliest en uiteindelijk dood kan gaan.
+3. ik heb een tekstje toegevoegd zodat je niet alleen in de console kan zien maar ook in het spel zelf dat je wint of dood gaat!
 
 ...
 
