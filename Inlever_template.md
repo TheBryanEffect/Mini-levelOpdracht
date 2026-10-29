@@ -16,7 +16,7 @@ het doel van het spel is om alle muntjes te verzamelen. zonder dat je dood gaat!
 
 ## Screenshot / GIF van je level
 
-![Mini-level preview](images/Level.gif)
+![Mini-level preview](images/mini level fullupdated.gif)
 
 ## Bewegend object
 
